@@ -20,7 +20,7 @@ C_DEFS =  \
 -DUSE_HAL_DRIVER \
 -DSTM32F407xx
 
-TOOLCHAIN = tc/bin/arm-none-eabi
+TOOLCHAIN = tools/bin/arm-none-eabi
 
 # Define the CPU Core (example : cortex-m0plus, cortex-m4)
 CPU_CORE=cortex-m4
@@ -95,4 +95,4 @@ LIBDIR =
 LDFLAGS = $(MCU) -specs=nano.specs -Wl,--script=$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,--entry,Reset_Handler,-Map=$(OUTPUT_DIR)/$(PROJECT).map,--cref -Wl,--gc-sections
 
 # Now do the heavy lifting
-include tc/build.mk
+include tools/build.mk
